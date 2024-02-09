@@ -29,3 +29,35 @@ body{
   flex-direction: column;
   justify-content: space-between;
 }
+ @media (max-width: 1536px){
+  .container {
+    width: 1366px;
+  }
+ }
+ @media (max-width: 1366px){
+  .container {
+    width: 1200px;
+  }
+ }
+ @media (max-width: 1200px){
+  .container {
+    width: 1024px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+ }
+ @media (max-width: 1024px){
+  .container {
+    width: 768px;
+  }
+ }
+ @media (max-width: 768px){
+  .container {
+    width: 648px;
+  }
+ }
+ @media (max-width: 648px){
+  .container {
+    width: 475px;
+  }
+ }
