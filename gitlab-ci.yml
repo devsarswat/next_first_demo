@@ -1,0 +1,35 @@
+stages:
+  - build
+  - deploy
+
+image: node:20
+
+variables:
+  CI_PAGES_DOMAIN: "https://next-demo-website-devsarswat-2162ed846d3a70a0ed7b83910ec86caaca.gitlab.io"
+
+build:
+  stage: build
+  script:
+    - yarn install
+    - yarn build
+    - rm -rf out
+    - mv .next out
+  artifacts:
+    paths:
+      - out
+  only:
+    - main
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying to GitLab Pages..."
+    - yarn install
+    - yarn build
+    - rm -rf out
+    - mv .next out
+  artifacts:
+    paths:
+      - out
+  only:
+    - main
