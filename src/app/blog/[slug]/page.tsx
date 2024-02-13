@@ -17,11 +17,13 @@ const singlePostPage = async ({ params }: any) => {
   const { slug } = params;
   // const post = await getData(slug);
   const post = await getPost(slug);
+  
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
         <Image
-          src="https://images.pexels.com/photos/5501162/pexels-photo-5501162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        src={post?.img}
+          // src="https://images.pexels.com/photos/5501162/pexels-photo-5501162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="post image"
           layout="fill"
           className={styles.img}
@@ -31,21 +33,22 @@ const singlePostPage = async ({ params }: any) => {
         <h1 className={styles.title}>{post?.title}</h1>
         <div className={styles.detail}>
           <Image
-            src="https://images.pexels.com/photos/5501162/pexels-photo-5501162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src={post?.img}
+            // src="https://images.pexels.com/photos/5501162/pexels-photo-5501162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="post image"
             width={50}
             height={50}
             className={styles.avtar}
           />
           <Suspense fallback={<div>Loading...</div>}>
-            <PostUser userId={post?.userid} />
+            <PostUser userId={post?.userId} />
           </Suspense>
           <div className={styles.deftailText}>
             <span className={styles.detailTitle}>Published</span>
             <span className={styles.detailValue}>01.01.2024</span>
           </div>
         </div>
-        <div className={styles.content}>{post?.body}</div>
+        <div className={styles.content}>{post?.desc}</div>
       </div>
     </div>
   );
