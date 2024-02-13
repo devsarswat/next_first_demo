@@ -24,11 +24,6 @@
     display: flex;
     gap: 20px;
 }
-.avtar{
-    object-fit: cover;
-    border-radius: 50%;
-
-}
 .deftailText{
     display: flex;
     flex-direction: column;
