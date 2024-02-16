@@ -29,7 +29,7 @@ import { useFormState } from "react-dom";
 
 interface FormState {
   error: string | null;
-  // Add any other fields you have in your state here
+ 
 }
 
 const AdminPostForm: React.FC<{ userId: any }> = ({ userId }) => {
