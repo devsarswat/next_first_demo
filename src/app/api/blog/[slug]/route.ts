@@ -15,7 +15,7 @@ export const GET = async (request:any,{ params}:{params:{slug :string}}) => {
         throw new Error("Failed to get post");
     }
 }
-export const DELET = async (request:any,{ params}:{params:{slug :string}}) => {
+export const DELETE = async (request:any,{ params}:{params:{slug :string}}) => {
     const {slug} = params;
     
        try{
