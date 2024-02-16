@@ -1,4 +1,4 @@
-import { addPost,deletPost } from "@/lib/action";
+import { addPost,deletePost } from "@/lib/action";
 
 const serverActionTestPage = () => {
     // const actionInComponent = async () => {
@@ -16,7 +16,7 @@ const serverActionTestPage = () => {
             <input type="text"  placeholder="userId" name="userId"/>
             <button>Create</button>
         </form>
-        <form action={deletPost}>
+        <form action={deletePost}>
             <input type="text"  placeholder="id" name="id"/>
             <button>Delete</button>
         </form>
