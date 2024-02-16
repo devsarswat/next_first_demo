@@ -1,12 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use server";
 import { revalidatePath } from "next/cache";
 import { Post, User } from "./models";
 import { connectToDb } from "./utils";
 import { signIn, signOut } from "@/lib/auth"; 
 import bcrypt from "bcrypt";
-
-export const addPost = async (prevState, formData:any) => {
-
+export const addPost = async (prevState:any, formData:any) => {
+  
     const {title, desc, slug, userId,img} = Object.fromEntries(formData);
 
     try{
@@ -44,7 +44,7 @@ export const deletePost = async (formData:any) => {
     }
 
 };
-export const addUser = async (prevState, formData:any) => {
+export const addUser = async (prevState:any, formData:any) => {
 
   const {username,email,password,img,isAdmin} = Object.fromEntries(formData);
 
@@ -92,7 +92,7 @@ export const handleLogout =async () => {
   };
 
 
-export const register = async (previousState, formData:any) => {
+export const register = async (previousState:any, formData:any) => {
     const { username, email, password, img, confirmPassword } =
       Object.fromEntries(formData);
   
@@ -129,7 +129,7 @@ export const register = async (previousState, formData:any) => {
     }
   };
 
-export const login = async (prevState, formData:any) => {
+export const login = async (prevState:any, formData:any) => {
     const { username, password } = Object.fromEntries(formData);
   
     try {

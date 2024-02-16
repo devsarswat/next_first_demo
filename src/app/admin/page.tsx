@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 };
 
 const AdminPage = async () => {
-  const session = await auth();
-
+  const session:any = await auth();
+  
   return (
     <div className={styles.container}>
       <div className={styles.row}>
