@@ -1,0 +1,25 @@
+stages:
+  - build
+  - deploy
+
+image: node:20
+
+
+before_script:
+  - npm install
+
+build:
+  stage: build
+  script:
+    - npm run build
+
+deploy:
+  stage: deploy
+  script:
+    - npm run build
+    - mv .next public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
