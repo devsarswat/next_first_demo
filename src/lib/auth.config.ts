@@ -24,7 +24,6 @@ export const authConfig ={
            const isOnAdminPanel = request.nextUrl?.pathname.startsWith("/admin");
            const isOnBlogPage = request.nextUrl?.pathname.startsWith("/blog");
            const isOnLoginPage = request.nextUrl?.pathname.startsWith("/login");
-
            if (isOnAdminPanel && !auth?.isAdmin){
             return false
             //    return {redirect:"/login"};
